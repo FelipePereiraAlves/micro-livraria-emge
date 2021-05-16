@@ -10,6 +10,7 @@ app.use(cors());
  * Retorna a lista de produtos da loja via InventoryService
  */
 app.get('/products', (req, res, next) => {
+    console.log('Request Product');
     inventory.SearchAllProducts(null, (err, data) => {
         if (err) {
             console.error(err);
@@ -52,6 +53,17 @@ app.get('/product/:id', (req, res, next) => {
         }
     });
 });
+
+app.post('/product/:id/:quantity', (request, response, next) => {
+    inventory.AddQuantityBook({id: request.params.id, quantity: request.params.quantity}, (err, product) => {
+        if (err) {
+            console.error(err);
+            response.status(500).send({ error: 'something failed :(' });
+        } else {
+            response.json(product);
+        }
+    });
+})
 
 /**
  * Inicia o router
