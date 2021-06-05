@@ -1,14 +1,38 @@
-version: '3'
-
-services:
-    micro-livraria-shipping:
-        image: felipecod/micro-livraria/shipping
-        container_name: micro-livraria-shipping
-        networks:
-            - micro-livraria
-        ports:
-            - "3001:3001"
-
-networks: 
-    micro-livraria:
-        driver: bridge
+#version: '3'
+#
+#services:
+#    micro-livraria-shipping:
+#        image: felipecod/micro-livraria/shipping
+#        container_name: micro-livraria-shipping
+#        networks:
+#            - micro-livraria
+#        ports:
+#            - "3001:3001"
+#    
+#    micro-livraria-inventory:
+#        image: felipecod/micro-livraria/inventory
+#        container_name: micro-livraria-inventory
+#        networks:
+#            - micro-livraria
+#        ports:
+#            - "3002:3002"
+#
+#    micro-livraria-controller:
+#        image: felipecod/micro-livraria/controller
+#        container_name: micro-livraria-controller
+#        networks: 
+#            - micro-livraria
+#        ports: 
+#            - "3000:3000"
+#
+#    micro-livraria-front:
+#        image: felipecod/micro-livraria/front
+#        container_name: micro-livaria-front
+#        networks:
+#            - micro-livraria
+#        ports: 
+#            - "5000:5000"
+#
+#networks: 
+#    driver: bridge
+#    micro-livraria:
